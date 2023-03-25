@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+  microServer:
+    image: noob_docker:1.6
+    container_name: ms01
+    ports:
+      - "6001:6001"
+    volumes:
+      - E:\Users\PC\docker\docker_host_data\compose_boot\springboot\data:/data
+    networks:
+      - atguigu_net
+    depends_on:
+      - redis
+      - mysql
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - E:\Users\PC\docker\docker_host_data\compose_boot\redis\redis.conf:/etc/redis/redis.conf
+      - E:\Users\PC\docker\docker_host_data\compose_boot\redis\data:/data
+    networks:
+      - atguigu_net
+    command: redis /etc/redis/redis.conf
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: '123456'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+      MYSQL_DATABASE: 'db2021'
+      MYSQL_USER: 'zzyy'
+      MYSQL_PASSWORD: 'zzyy123'
+    ports:
+      - "3307:3306"
+    volumes:
+      - E:\Users\PC\docker\docker_host_data\compose_boot\mysql\conf:/etc/mysql/conf.d
+      - E:\Users\PC\docker\docker_host_data\compose_boot\mysql\logs:/logs
+      - E:\Users\PC\docker\docker_host_data\compose_boot\mysql\data:/var/lib/mysql
+    networks:
+      - atguigu_net
+    command:
+      - --default-authentication-plugin=mysql_native_password # 解决外部无法访问
+
+networks:
+  atguigu_net:
+
