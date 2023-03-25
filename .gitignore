@@ -1,3 +1,4 @@
 .idea
 docker_boot.iml
 target
+/docker/docker_boot-0.0.1-SNAPSHOT.jar
