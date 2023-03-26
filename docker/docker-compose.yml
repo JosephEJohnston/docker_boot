@@ -11,10 +11,10 @@ services:
     networks:
       - atguigu_net
     depends_on:
-      - redis
-      - mysql
+      - redis_boot_compose
+      - mysql_boot_compose
 
-  redis:
+  redis_boot_compose:
     image: redis:latest
     ports:
       - "6379:6379"
@@ -23,16 +23,16 @@ services:
       - E:\Users\PC\docker\docker_host_data\compose_boot\redis\data:/data
     networks:
       - atguigu_net
-    command: redis /etc/redis/redis.conf
+    command: redis-server /etc/redis/redis.conf
 
-  mysql:
+  mysql_boot_compose:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: '123456'
       MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
       MYSQL_DATABASE: 'db2021'
-      MYSQL_USER: 'zzyy'
-      MYSQL_PASSWORD: 'zzyy123'
+#      MYSQL_USER: 'zzyy'
+#      MYSQL_PASSWORD: 'zzyy123'
     ports:
       - "3307:3306"
     volumes:
