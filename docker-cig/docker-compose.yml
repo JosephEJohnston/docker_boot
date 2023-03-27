@@ -1,0 +1,48 @@
+version: "3"
+
+services:
+  influxdb:
+    image: tutum/influxdb:latest
+    restart: always
+    environment:
+      - PRE_CREATE_DB=cadvisor
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+    volumes:
+      - E:\Users\PC\docker\cig\influxdb\data:/data
+
+  cadvisor:
+    image: google/cadvisor:latest
+    links:
+      - influxdb:influxsrv
+    command: -storage_driver=influxdb -storage_driver_db=cadvisor -storage_driver_host=influxsrv:8086
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootf:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker:/var/lib/docker:ro
+
+  grafana:
+    user: "104"
+    image: grafana/grafana:latest
+    restart: always
+    links:
+      - influxdb:influxsrv
+    ports:
+      - "3000:3000"
+    volumes:
+      - E:\Users\PC\docker\cig\grafana\data:/var/lib/grafana
+    environment:
+      - HTTP_USER=admin
+      - HTTP_PASS=admin
+      - INFLUXDB_HOST=influxsrv
+      - INFLUXDB_PORT=8086
+      - INFLUXDB_NAME=cadvisor
+      - INFLUXDB_USER=root
+      - INFLUXDB_PASS=root
+
+
