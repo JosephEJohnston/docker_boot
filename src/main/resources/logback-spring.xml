@@ -6,6 +6,7 @@
     <!--应用名称-->
     <property name="APP_NAME" value="springboot-logback-elk-demo"/>
     <!--日志文件保存路径-->
+    <!-- C:\Users\PC\AppData\Local\Temp\logs -->
     <property name="LOG_FILE_PATH" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/logs}"/>
     <contextName>${APP_NAME}</contextName>
     <!--每天记录日志到文件appender-->
