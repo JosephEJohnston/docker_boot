@@ -1,4 +1,4 @@
-package com.noob.docker_boot.other;
+package com.noob.docker_boot.other.spring;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
