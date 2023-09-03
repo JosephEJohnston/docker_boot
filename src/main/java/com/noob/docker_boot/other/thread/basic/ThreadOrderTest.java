@@ -1,4 +1,4 @@
-package com.noob.docker_boot.other.thread;
+package com.noob.docker_boot.other.thread.basic;
 
 // 如何让三个线程按序执行？
 public class ThreadOrderTest {

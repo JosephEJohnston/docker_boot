@@ -1,6 +1,6 @@
-package com.noob.docker_boot.other.thread;
+package com.noob.docker_boot.other.thread.basic;
 
-public class MyInterrupt1 extends Thread {
+public class MyInterrupt2 extends Thread {
     // 线程执行的退出标记
     public volatile boolean flag = false;
 

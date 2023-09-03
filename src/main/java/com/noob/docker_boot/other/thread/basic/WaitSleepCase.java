@@ -1,4 +1,4 @@
-package com.noob.docker_boot.other.thread;
+package com.noob.docker_boot.other.thread.basic;
 
 // wait 和 sleep 方法的不同？
 public class WaitSleepCase {

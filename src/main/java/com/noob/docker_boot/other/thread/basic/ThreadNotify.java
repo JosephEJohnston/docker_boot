@@ -1,4 +1,4 @@
-package com.noob.docker_boot.other.thread;
+package com.noob.docker_boot.other.thread.basic;
 
 public class ThreadNotify {
 

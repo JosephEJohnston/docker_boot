@@ -1,4 +1,4 @@
-package com.noob.docker_boot.other.thread;
+package com.noob.docker_boot.other.thread.basic;
 
 // 如何停止一个正在运行的线程？
 public class InterruptThread {
