@@ -48,7 +48,7 @@ public class SpringBeanLifeCycleTest implements
     }
 
     // 依赖注入完成后自动调用
-    @PostConstruct
+    @PostConstruct // 实际由 BeanPostProcessor 处理，是 jdk 定义的初始化注解
     public void init() {
         System.out.println("(PostConstruct)init 方法执行了。。。。。。。。");
     }
