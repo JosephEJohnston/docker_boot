@@ -1,8 +1,8 @@
-package com.noob.docker_boot.other.design_pattern.simple_factory;
+package com.noob.docker_boot.other.design_pattern.factory.simple_factory;
 
-import com.noob.docker_boot.other.design_pattern.AmericanCoffee;
-import com.noob.docker_boot.other.design_pattern.Coffee;
-import com.noob.docker_boot.other.design_pattern.LatteCoffee;
+import com.noob.docker_boot.other.design_pattern.factory.AmericanCoffee;
+import com.noob.docker_boot.other.design_pattern.factory.Coffee;
+import com.noob.docker_boot.other.design_pattern.factory.LatteCoffee;
 
 public class SimpleCoffeeFactory {
 

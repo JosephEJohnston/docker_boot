@@ -1,7 +1,6 @@
-package com.noob.docker_boot.other.design_pattern.factory_method;
+package com.noob.docker_boot.other.design_pattern.factory.factory_method;
 
-import com.noob.docker_boot.other.design_pattern.Coffee;
-import com.noob.docker_boot.other.design_pattern.simple_factory.SimpleCoffeeFactory;
+import com.noob.docker_boot.other.design_pattern.factory.Coffee;
 
 public class CoffeeStore {
 

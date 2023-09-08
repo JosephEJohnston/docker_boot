@@ -1,4 +1,4 @@
-package com.noob.docker_boot.other.design_pattern;
+package com.noob.docker_boot.other.design_pattern.factory;
 
 public class AmericanCoffee implements Coffee {
     @Override
